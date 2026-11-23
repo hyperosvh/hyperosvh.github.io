@@ -17,7 +17,7 @@
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a110e">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "HyperOS Tool", "alternateName": ["hyperosvh", "Việt hóa Xiaomi HyperOS"], "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "softwareVersion": "5.5.40", "inLanguage": "vi", "url": "https://hyperosvh.github.io/", "image": "https://hyperosvh.github.io/logo.jpg", "description": "hyperosvh: tải HyperOS Tool để Việt hóa máy Xiaomi, Redmi, POCO chạy HyperOS bằng một lần nhấn. Theme Việt hóa, tiếng Việt, sửa chữ Ả Rập, thông báo đúng giờ. Không cần root. Tải APK miễn phí.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "VND"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "HyperOS Tool", "alternateName": ["hyperosvh", "Việt hóa Xiaomi HyperOS"], "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "inLanguage": "vi", "url": "https://hyperosvh.github.io/", "image": "https://hyperosvh.github.io/logo.jpg", "description": "hyperosvh: tải HyperOS Tool để Việt hóa máy Xiaomi, Redmi, POCO chạy HyperOS bằng một lần nhấn. Theme Việt hóa, tiếng Việt, sửa chữ Ả Rập, thông báo đúng giờ. Không cần root. Tải APK miễn phí.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "VND"}}</script>
 <!-- Google Search Console: nếu chọn xác minh bằng "Thẻ HTML", dán thẻ <meta name="google-site-verification" ...> vào dòng dưới -->
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,11 +144,11 @@ main { padding-bottom: 48px }
     </div>
     <div class="card" aria-labelledby="appT">
       <div class="app"><img src="logo.jpg" alt=""><h2 id="appT">HyperOS Tool</h2></div>
-      <a class="btn" id="dl" href="https://drive.google.com/drive/folders/1c8xZP75ACO6JdN_R9TWtjGU8spSt6zhH?usp=sharing" target="_blank" rel="noopener">
+      <a class="btn" id="dl" href="https://github.com/hyperosvh/hyperosvh.github.io/releases/latest/download/HyperOS_Tool.apk" rel="noopener">
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
         <span>Tải APK</span>
       </a>
-      <p class="note" id="dlNote">Mở thư mục Google Drive, chọn tệp APK rồi bấm Tải xuống. Tệp lớn nên Drive hỏi lại, bấm Vẫn tải xuống.</p>
+      <p class="note" id="dlNote">Bấm là tải tệp APK về máy. Tải xong, mở tệp để cài.</p>
     </div>
   </div>
 
@@ -185,11 +185,10 @@ main { padding-bottom: 48px }
 </main>
 
 <script>
-// Mỗi lần ra bản mới chỉ sửa ở đây.
+// Ra bản mới không cần sửa trang: tạo release mới trong kho, tệp APK đặt tên HyperOS_Tool.apk.
+// apk để trống thì nút mở thư mục Google Drive.
 const APP = {
-  version: "5.5.40",
-  // Link chia sẻ của chính tệp APK trên Google Drive (…/file/d/<mã>/view). Để trống thì nút mở thư mục tải.
-  apk: "",
+  apk: "https://github.com/hyperosvh/hyperosvh.github.io/releases/latest/download/HyperOS_Tool.apk",
   folder: "https://drive.google.com/drive/folders/1c8xZP75ACO6JdN_R9TWtjGU8spSt6zhH?usp=sharing"
 };
 // A Drive file link → its direct download (the confirm step of large files skipped).
@@ -197,13 +196,13 @@ function driveDirect(link) {
   const m = link.match(/\/file\/d\/([\w-]{10,})/) || link.match(/[?&]id=([\w-]{10,})/);
   return m ? "https://drive.usercontent.google.com/download?id=" + m[1] + "&export=download&confirm=t" : link;
 }
-document.querySelectorAll("[data-v]").forEach(e => { e.textContent = APP.version; });
 const dl = document.getElementById("dl");
 if (APP.apk.startsWith("https://")) {
   dl.href = driveDirect(APP.apk);
   document.getElementById("dlNote").textContent = "Bấm là tải tệp APK về máy. Tải xong, mở tệp để cài.";
 } else {
-  dl.href = APP.folder;
+  dl.href = APP.folder; dl.target = "_blank";
+  document.getElementById("dlNote").textContent = "Mở thư mục Google Drive, chọn tệp APK rồi bấm Tải xuống. Tệp lớn nên Drive hỏi lại, bấm Vẫn tải xuống.";
 }
 </script>
 </body>
