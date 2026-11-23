@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>hyperosvh · Việt hóa Xiaomi HyperOS</title>
+<meta name="description" content="hyperosvh: tải HyperOS Tool để Việt hóa máy Xiaomi, Redmi, POCO chạy HyperOS bằng một lần nhấn. Theme Việt hóa, tiếng Việt, sửa chữ Ả Rập, thông báo đúng giờ. Không cần root. Tải APK miễn phí.">
+<link rel="canonical" href="https://hyperosvh.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="hyperosvh">
+<meta property="og:title" content="hyperosvh · Việt hóa Xiaomi HyperOS">
+<meta property="og:description" content="hyperosvh: tải HyperOS Tool để Việt hóa máy Xiaomi, Redmi, POCO chạy HyperOS bằng một lần nhấn. Theme Việt hóa, tiếng Việt, sửa chữ Ả Rập, thông báo đúng giờ. Không cần root. Tải APK miễn phí.">
+<meta property="og:url" content="https://hyperosvh.github.io/">
+<meta property="og:image" content="https://hyperosvh.github.io/logo.jpg">
+<meta property="og:locale" content="vi_VN">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff8f6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a110e">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "HyperOS Tool", "alternateName": ["hyperosvh", "Việt hóa Xiaomi HyperOS"], "operatingSystem": "Android", "applicationCategory": "UtilitiesApplication", "softwareVersion": "5.5.40", "inLanguage": "vi", "url": "https://hyperosvh.github.io/", "image": "https://hyperosvh.github.io/logo.jpg", "description": "hyperosvh: tải HyperOS Tool để Việt hóa máy Xiaomi, Redmi, POCO chạy HyperOS bằng một lần nhấn. Theme Việt hóa, tiếng Việt, sửa chữ Ả Rập, thông báo đúng giờ. Không cần root. Tải APK miễn phí.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "VND"}}</script>
+<!-- Google Search Console: nếu chọn xác minh bằng "Thẻ HTML", dán thẻ <meta name="google-site-verification" ...> vào dòng dưới -->
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<style>
+/* Material Design 3: top app bar, hero with the download card, then the six tabs and the install steps.
+   Colour roles from a deep-orange seed (the logo's flame), light and dark schemes. */
+:root {
+  --primary: #a83a12;
+  --on-primary: #ffffff;
+  --primary-container: #ffdbd0;
+  --on-primary-container: #3a0a00;
+  --secondary-container: #f7ddd5;
+  --on-secondary-container: #2c1610;
+  --surface: #fff8f6;
+  --surface-container-low: #fff1ed;
+  --surface-container: #fcebe6;
+  --surface-container-high: #f6e5e0;
+  --on-surface: #231917;
+  --on-surface-variant: #55433e;
+  --outline: #85736d;
+  --outline-variant: #d9c1ba;
+  --shadow: rgba(35, 25, 23, .16);
+  --font: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --primary: #ffb59e; --on-primary: #5e1700; --primary-container: #842600; --on-primary-container: #ffdbd0;
+  --secondary-container: #5d4038; --on-secondary-container: #ffdbd0;
+  --surface: #1a110e; --surface-container-low: #231915; --surface-container: #271d19; --surface-container-high: #322723;
+  --on-surface: #f1dfd9; --on-surface-variant: #d9c1ba; --outline: #a18c86; --outline-variant: #55433e;
+  --shadow: rgba(0, 0, 0, .5); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --primary: #ffb59e; --on-primary: #5e1700; --primary-container: #842600; --on-primary-container: #ffdbd0;
+  --secondary-container: #5d4038; --on-secondary-container: #ffdbd0;
+  --surface: #1a110e; --surface-container-low: #231915; --surface-container: #271d19; --surface-container-high: #322723;
+  --on-surface: #f1dfd9; --on-surface-variant: #d9c1ba; --outline: #a18c86; --outline-variant: #55433e;
+  --shadow: rgba(0, 0, 0, .5); color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--surface); color: var(--on-surface); font-family: var(--font); font-size: 16px; line-height: 24px; letter-spacing: .01em; -webkit-font-smoothing: antialiased }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+svg.i { width: 24px; height: 24px; fill: currentColor; flex: none }
+
+/* top app bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface) }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface) }
+.bar .wrap { display: flex; align-items: center; gap: 12px; height: 64px }
+.bar img { width: 32px; height: 32px; border-radius: 8px }
+.bar b { font-size: 22px; line-height: 28px; font-weight: 500; letter-spacing: 0 }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; padding-block: 32px 48px }
+.label { color: var(--primary); font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: .1px; margin: 0 }
+h1 { font-size: 45px; line-height: 52px; font-weight: 400; letter-spacing: 0; margin: 8px 0 16px; text-wrap: balance }
+.lead { color: var(--on-surface-variant); margin: 0; max-width: 34em }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 24px 0 0; padding: 0 }
+.chips li { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 16px 0 8px; border: 1px solid var(--outline-variant); border-radius: 8px;
+  font-size: 14px; line-height: 20px; font-weight: 500; color: var(--on-surface-variant) }
+.chips svg.i { width: 18px; height: 18px; color: var(--primary) }
+
+/* the download card (elevated card) */
+.card { background: var(--surface-container-low); border-radius: 28px; padding: 24px; box-shadow: 0 1px 2px var(--shadow), 0 1px 3px 1px rgba(0,0,0,.06) }
+.app { display: flex; align-items: center; gap: 16px }
+.app img { width: 64px; height: 64px; border-radius: 16px }
+.app h2 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 500; letter-spacing: 0 }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 56px; margin-top: 24px; border-radius: 28px;
+  background: var(--primary); color: var(--on-primary); text-decoration: none; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: .15px;
+  position: relative; overflow: hidden; transition: box-shadow .2s }
+.btn::after { content: ""; position: absolute; inset: 0; background: var(--on-primary); opacity: 0; transition: opacity .15s }
+.btn:hover { box-shadow: 0 1px 2px var(--shadow), 0 1px 3px 1px rgba(0,0,0,.08) }
+.btn:hover::after { opacity: .08 }
+.btn:active::after { opacity: .12 }
+.btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px }
+.note { color: var(--on-surface-variant); font-size: 14px; line-height: 20px; margin: 16px 0 0 }
+
+/* sections */
+section { padding-block: 32px }
+section h2 { font-size: 28px; line-height: 36px; font-weight: 400; margin: 4px 0 24px; text-wrap: balance }
+.tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
+.tab { background: var(--surface); border: 1px solid var(--outline-variant); border-radius: 16px; padding: 16px; min-width: 0 }
+.tab .ic { width: 40px; height: 40px; border-radius: 20px; display: grid; place-items: center; background: var(--secondary-container); color: var(--on-secondary-container) }
+.tab .name { display: block; margin-top: 16px; color: var(--primary); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .5px; text-transform: uppercase }
+.tab h3 { margin: 4px 0 4px; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: .15px }
+.tab p { margin: 0; color: var(--on-surface-variant); font-size: 14px; line-height: 20px; letter-spacing: .25px }
+
+.steps { list-style: none; margin: 0; padding: 0; max-width: 760px; background: var(--surface-container-low); border-radius: 16px; overflow: hidden }
+.steps li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; padding: 16px; position: relative }
+.steps li + li::before { content: ""; position: absolute; top: 0; left: 72px; right: 16px; border-top: 1px solid var(--outline-variant) }
+.steps .n { width: 40px; height: 40px; border-radius: 20px; display: grid; place-items: center; background: var(--primary-container); color: var(--on-primary-container); font-weight: 500 }
+.steps b { display: block; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: .15px }
+.steps span { display: block; color: var(--on-surface-variant); font-size: 14px; line-height: 20px; letter-spacing: .25px }
+main { padding-bottom: 48px }
+
+@media (max-width: 840px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 32px }
+  .tabs { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+}
+@media (max-width: 600px) {
+  h1 { font-size: 36px; line-height: 44px }
+  section h2 { font-size: 24px; line-height: 32px }
+  .tabs { grid-template-columns: minmax(0, 1fr) }
+  .hero { padding-block: 16px 32px }
+}
+@media (prefers-reduced-motion: reduce) { .btn, .btn::after { transition: none } }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap"><img src="logo.jpg" alt="Biểu tượng HyperOS Tool: chú mèo phun lửa"><b>hyperosvh</b></div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="label">Tool Việt hóa Xiaomi HyperOS</p>
+      <h1>Việt hóa HyperOS bằng một lần nhấn</h1>
+      <p class="lead">HyperOS Tool nạp theme Việt hóa, đổi ngôn ngữ máy sang tiếng Việt, sửa chữ Ả Rập ở Thư viện và Thời tiết, và giữ thông báo đến đúng giờ. Tự động Việt hóa làm cả 8 bước, thường chưa tới một phút.</p>
+      <ul class="chips">
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Không cần root</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>ADB không dây ngay trên máy</li>
+        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Có bản cho máy gập</li>
+      </ul>
+    </div>
+    <div class="card" aria-labelledby="appT">
+      <div class="app"><img src="logo.jpg" alt=""><h2 id="appT">HyperOS Tool</h2></div>
+      <a class="btn" id="dl" href="https://drive.google.com/drive/folders/1c8xZP75ACO6JdN_R9TWtjGU8spSt6zhH?usp=sharing" target="_blank" rel="noopener">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+        <span>Tải APK</span>
+      </a>
+      <p class="note" id="dlNote">Mở thư mục Google Drive, chọn tệp APK rồi bấm Tải xuống. Tệp lớn nên Drive hỏi lại, bấm Vẫn tải xuống.</p>
+    </div>
+  </div>
+
+  <section aria-labelledby="tabsT">
+    <p class="label">Trong app</p>
+    <h2 id="tabsT">Sáu tab, mỗi tab một việc</h2>
+    <div class="tabs">
+      <article class="tab"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></span>
+        <span class="name">MTZ</span><h3>Nạp và áp dụng theme Việt hóa</h3><p>MTZVN, bản kính lỏng, bản cho máy gập, hoặc tệp .mtz của bạn. Chống reset giữ theme không bị đưa về mặc định.</p></article>
+      <article class="tab"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg></span>
+        <span class="name">ArabFix</span><h3>Sửa chữ Ả Rập</h3><p>Thư viện và Thời tiết của ROM nội địa có thể hiện chữ Ả Rập khi máy dùng tiếng Việt. Cài bản Quốc tế, hoặc chuyển riêng các app này sang tiếng Anh.</p></article>
+      <article class="tab"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m1 9 2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8 3 3 3-3a4.24 4.24 0 0 0-6 0zm-4-4 2 2a7.07 7.07 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg></span>
+        <span class="name">Shizuku</span><h3>ADB không dây ngay trên máy</h3><p>Ghép đôi một lần, app tự đọc mã 6 số. Ngắt kết nối và tắt gỡ lỗi để dùng app ngân hàng.</p></article>
+      <article class="tab"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.08 16zm2.95-8H5.08a7.99 7.99 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg></span>
+        <span class="name">SetEdit</span><h3>Đổi ngôn ngữ hệ thống</h3><p>Sang tiếng Việt (vi-VN) không cần ADB. Giá trị cũ luôn được sao lưu để khôi phục.</p></article>
+      <article class="tab"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c1.1 0 2-.9 2-2h-4a2 2 0 0 0 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></span>
+        <span class="name">NotiFix</span><h3>Thông báo đến đúng giờ</h3><p>Cho ứng dụng bạn chọn chạy nền, bỏ giới hạn pin, bật Autostart, bật thông báo và cấp quyền ngay trên trang của HyperOS. Giữ kết nối thông báo (FCM) cho Google Play services.</p></article>
+      <article class="tab"><span class="ic"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></span>
+        <span class="name">Tiện ích</span><h3>Tự động Việt hóa</h3><p>Một lần nhấn làm 8 bước: theme, tiếng Việt, sửa chữ Ả Rập, Chống reset, chạy nền, thông báo, rồi tắt gỡ lỗi.</p></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="stepT">
+    <p class="label">Bắt đầu</p>
+    <h2 id="stepT">Cài và Việt hóa máy</h2>
+    <ol class="steps">
+      <li><span class="n">1</span><div><b>Tải và cài APK</b><span>Máy có thể cảnh báo app làm cho Android cũ: vẫn cài. App cần điều này để giữ Google Play services không bị HyperOS đóng băng.</span></div></li>
+      <li><span class="n">2</span><div><b>Mở app, xem lại quyền</b><span>Giữ nguyên rồi bấm Tiếp tục; bắt buộc giữ Sửa đổi cài đặt hệ thống.</span></div></li>
+      <li><span class="n">3</span><div><b>Kết nối Wi-Fi và ghép đôi ở tab Shizuku</b><span>Wi-Fi bất kỳ, không cần Internet. Bật Wireless debugging, chọn Pair device with pairing code, app tự đọc mã.</span></div></li>
+      <li><span class="n">4</span><div><b>Tab MTZ → Tự động Việt hóa → Bắt đầu</b><span>Chọn theme rồi để app chạy 8 bước, xong thì app tự tắt gỡ lỗi. Bước nào không thành công thì bấm vào để xem cách làm.</span></div></li>
+      <li><span class="n">5</span><div><b>Khởi động lại nếu app nhắc</b><span>Khi bước ngôn ngữ ghi là áp dụng sau khi khởi động lại.</span></div></li>
+    </ol>
+  </section>
+</main>
+
+<script>
+// Mỗi lần ra bản mới chỉ sửa ở đây.
+const APP = {
+  version: "5.5.40",
+  // Link chia sẻ của chính tệp APK trên Google Drive (…/file/d/<mã>/view). Để trống thì nút mở thư mục tải.
+  apk: "",
+  folder: "https://drive.google.com/drive/folders/1c8xZP75ACO6JdN_R9TWtjGU8spSt6zhH?usp=sharing"
+};
+// A Drive file link → its direct download (the confirm step of large files skipped).
+function driveDirect(link) {
+  const m = link.match(/\/file\/d\/([\w-]{10,})/) || link.match(/[?&]id=([\w-]{10,})/);
+  return m ? "https://drive.usercontent.google.com/download?id=" + m[1] + "&export=download&confirm=t" : link;
+}
+document.querySelectorAll("[data-v]").forEach(e => { e.textContent = APP.version; });
+const dl = document.getElementById("dl");
+if (APP.apk.startsWith("https://")) {
+  dl.href = driveDirect(APP.apk);
+  document.getElementById("dlNote").textContent = "Bấm là tải tệp APK về máy. Tải xong, mở tệp để cài.";
+} else {
+  dl.href = APP.folder;
+}
+</script>
+</body>
+</html>
